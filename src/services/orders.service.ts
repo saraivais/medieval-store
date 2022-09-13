@@ -1,8 +1,10 @@
 import ordersModel from '../models/orders.model';
+import Order from '../interfaces/order.interface';
 
 const ordersService = {
-  getAll: async ():Promise<void> => {
-    await ordersModel.getAll();
+  getAll: async ():Promise<Order[]> => {
+    const allOrders = await ordersModel.getAll();
+    return allOrders;
   },
 };
 
