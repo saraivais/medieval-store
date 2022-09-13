@@ -3,10 +3,12 @@ import connection from './connection';
 import User from '../interfaces/user.interface';
 
 const usersModel = {
-  create: async ({ username, classe, level, password }:User):Promise<void> => {
+  create: async ({ username, classe, level, password }:User):Promise<number> => {
     const query = `INSERT INTO Trybesmith.Users 
     (username, classe, level, password) VALUES (?, ?, ?, ?);`;
-    await connection.execute<ResultSetHeader>(query, [username, classe, level, password]);
+    const [{ insertId }] = await
+    connection.execute<ResultSetHeader>(query, [username, classe, level, password]);
+    return insertId;
   },
 };
 
