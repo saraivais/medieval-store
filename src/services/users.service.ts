@@ -10,7 +10,10 @@ const jwtSecret = process.env.JWT_SECRET || 'Unbowed, Unbent, Unbroken';
 
 const usersService = {
   create: async (userToCreate:User):Promise<Token> => {
-    
+    const createdId = await usersModel.create(userToCreate);
+    const token = usersService.generateToken(userToCreate.username, createdId);
+
+    return { token };
   },
 
   generateToken: (username:string, id: number):string => {
