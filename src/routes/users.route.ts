@@ -5,4 +5,4 @@ const usersRoute = express.Router();
 
 usersRoute.post('/', usersController.create);
 
-export default usersController;
+export default usersRoute;
