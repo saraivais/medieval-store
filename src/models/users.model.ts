@@ -17,7 +17,6 @@ const usersModel = {
     const query = `SELECT id FROM Trybesmith.Users
     WHERE username = ? AND password = ?;`;
     const [result] = await connection.execute<UserDataPacket[]>(query, [username, password]);
-    console.log('o q vem do model', result);
     return result;
   },
 
