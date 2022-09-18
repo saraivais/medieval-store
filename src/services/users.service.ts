@@ -24,6 +24,17 @@ const usersService = {
     const token = jwt.sign({ data: { username, id } }, jwtSecret, jwtConfig);
     return token;
   },
+
+  validateLoginData: Joi.object({
+    username: Joi.string().required().empty('').messages({
+      'any.required': '400|"username" is required',
+      'string.empty': '400|"username" is required',
+    }),
+    password: Joi.string().required().empty('').messages({
+      'any.required': '400|"password" is required',
+      'string.empty': '400|"password" is required',
+    }),
+  }),
 };
 
 export default usersService;
