@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import jwt, { SignOptions } from 'jsonwebtoken';
+import Joi, { ValidationError } from 'joi';
 import usersModel from '../models/users.model';
 import User from '../interfaces/user.interface';
 import Token from '../interfaces/token.interface';
@@ -16,7 +17,7 @@ const usersService = {
     return { token };
   },
 
-  generateToken: (username:string, id: number):string => {
+  generateToken: (username: string, id: number):string => {
     const jwtConfig:SignOptions = {
       algorithm: 'HS256',
     };
@@ -35,6 +36,22 @@ const usersService = {
       'string.empty': '400|"password" is required',
     }),
   }),
+  
+  login: async (loginInformation:User):Promise<Token> => {
+    const { error } = usersService.validateLoginData.validate(loginInformation);
+    if (error) {
+      throw new Error(error.details[0].message);
+    }
+    const [user] = await usersModel.getId(loginInformation.username, loginInformation.password);
+
+    if (!user) {
+      throw new Error('401|Username or password invalid');
+    }
+    const { id } = user;
+    const token = usersService.generateToken(loginInformation.username, id as number);
+
+    return { token };
+  },
 };
 
 export default usersService;
