@@ -1,3 +1,4 @@
+import Joi from 'joi';
 import productsModel from '../models/products.model';
 import Product from '../interfaces/product.interface';
 
@@ -8,6 +9,10 @@ const productsService = {
   },
 
   create: async (productToCreate:Product):Promise<Product> => {
+    const { error } = productsService.validateProductData.validate(productToCreate);
+    if (error) {
+      throw new Error(error.details[0].message);
+    }
     const createdProduct = await productsModel.create(productToCreate);
     return createdProduct;
   },
