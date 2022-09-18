@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import jwt, { SignOptions } from 'jsonwebtoken';
-import Joi, { ValidationError } from 'joi';
+import Joi from 'joi';
 import usersModel from '../models/users.model';
 import User from '../interfaces/user.interface';
 import Token from '../interfaces/token.interface';
