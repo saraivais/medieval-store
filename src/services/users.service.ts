@@ -34,6 +34,10 @@ const usersService = {
   }),
 
   create: async (userToCreate:User):Promise<Token> => {
+    const { error } = usersService.validateUserData.validate(userToCreate);
+    if (error) {
+      throw new Error(error.details[0].message);
+    }
     const createdId = await usersModel.create(userToCreate);
     const token = usersService.generateToken(userToCreate.username, createdId);
 
