@@ -8,6 +8,13 @@ const usersController = {
     const result = await usersService.create(userToCreate);
     return response.status(201).json(result);
   },
+
+  login: async (request: Request, response: Response, _next: NextFunction):Promise<Response> => {
+    const loginInformation: User = request.body;
+    const result = await usersService.login(loginInformation);
+    return response.status(200).json(result);
+  },
+
 };
 
 export default usersController;
