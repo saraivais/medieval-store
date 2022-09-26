@@ -19,9 +19,9 @@ The objective of Medieval store is to simulate the management system of a mediev
 <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=white" alt="swagger-logo"/>
 <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white" alt="postman-logo"/>
 
-Medieval Store was developed through **Docker** to create an isolated development environment. The **npm** package **express-async-errors** was used to deal with asynchronous errors. This project was developed using the **MSC** (Model-Service-Controller) layered architecture, with **MySQL** as the chosen database management system. 
+Medieval Store was developed through **Docker** to create an isolated development environment. The **npm** package **express-async-errors** was used to deal with asynchronous errors. This project was developed using the **MSC** (Model-Service-Controller) layered architecture, with **MySQL** as the chosen database management system.   
 Also, the **jsonwebtoken** (JWT) library was used to generate and authenticate tokens, adding a layer of security to this API, using validation through middlewares.
-The **Express.js** framework was used to structure this API's endpoints in a **RESTful** manner and the **TypeScript** superset was used to develop a robust, strongly typed software.
+The **Express.js** framework was used to structure this API's endpoints in a **RESTful** manner and the **TypeScript** superset was used to develop a robust, strongly typed software.   
 Afterwards, **Swagger** and **Postman** were used to write and publish Medieval Store's documentation.
 
 
@@ -48,9 +48,9 @@ O objetivo do Medieval Store é simular o sistema de gestão de uma loja medieva
 <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=white" alt="swagger-logo"/>
 <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white" alt="postman-logo"/>
 
-Medieval Store foi desenvolvido através do **Docker** para criar um ambiente de desenvolvimento isolado. O pacote **npm** **express-async-errors** foi usado para lidar com erros assíncronos. Este projeto foi desenvolvido utilizando a arquitetura em camadas **MSC** (Model-Service-Controller), com o **MySQL** como sistema de gerenciamento de banco de dados escolhido.
+Medieval Store foi desenvolvido através do **Docker** para criar um ambiente de desenvolvimento isolado. O pacote **npm** **express-async-errors** foi usado para lidar com erros assíncronos. Este projeto foi desenvolvido utilizando a arquitetura em camadas **MSC** (Model-Service-Controller), com o **MySQL** como sistema de gerenciamento de banco de dados escolhido.   
 Além disso, a biblioteca **jsonwebtoken** (JWT) foi utilizada para gerar e autenticar tokens, adicionando uma camada de segurança a esta API, utilizando validações via middlewares.
-A estrutura **Express.js** foi usada para estruturar os endpoints dessa API de maneira **RESTful** e o superset **TypeScript** foi usado para desenvolver um software robusto e fortemente tipado.
+A estrutura **Express.js** foi usada para estruturar os endpoints dessa API de maneira **RESTful** e o superset **TypeScript** foi usado para desenvolver um software robusto e fortemente tipado.   
 Posteriormente, **Swagger** e **Postman** foram usados ​​para escrever e publicar a documentação da Medieval Store.
 
 
