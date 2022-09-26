@@ -1,4 +1,4 @@
-<h1 align="center">MEDIEVAL STORE</h1>
+<h1 align="center">⚔️ MEDIEVAL STORE 🛡️</h1>
 
 ## English 🇬🇧
 <details>
